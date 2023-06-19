@@ -1,0 +1,121 @@
+* {
+    /* universal sector --->jab bhi development karo ese jaroor likho esase output margin ke sath nahi aata hai to achha dikhta hai*/
+    margin: 0;
+    padding: 0;
+    /* in short m-0 or p-0 likh dene pe margine and padding zero ho jata hai */
+    box-sizing: border-box;
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    /* x-axis me over flow ki band karne ke liye hidden likhte hai */
+    overflow-y: auto;
+    perspective: 10px;
+    /* z=0 ka plane and mere aankho ka bich ka distance jo hoga vo 10px hoga */
+}
+
+/* container kyo use kiye because flex banane ke liye kyoki flex banane ke liye parent chahiye hota hai */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* center me rakhne ke liye justify-content and align-item ka use kiye hai */
+    height: 100%;
+    transform-style: preserve-3d;
+    /* agar transform-style nahi likhengge to 3d effect nahi chalega*/
+    z-index: -1;
+    /* z-index overlapping ke liye hota hai ki kon sa element kiske upper aane vala hai */
+
+}
+
+.background {
+    transform: translateZ(-40px) scale(5);
+    /* transform translatez karne se image dur chali gayi and dur jayenge to chhota dikhenge to scale kar diye to ab bada bhi dikhega */
+
+}
+
+.foreground {
+    transform: translateZ(-20px) scale(3);
+}
+
+.background,
+.foreground {
+    position: absolute;
+
+    /* absolute positioning karke overlap karate hai */
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* z-index dene se adventure image ke upper aa jayegi */
+    object-fit: cover;
+}
+
+h1 {
+    position: relative;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 10px 10px 10px rgb(0, 0, 0);
+
+}
+
+section {
+    background-color: rgba(0, 0, 0, 0.575);
+    color: rgb(254, 254, 254);
+    padding: 5rem 0;
+}
+
+.secheading {
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text {
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg {
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    /* background image esase image vahi pe rahti hai and iske upper scroll kar sakte hai */
+    background-size: cover;
+    height: 500px;
+}
+
+.desc {
+
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+
+
+}
+
+.bg1 {
+    background-image: url(biking.jpg);
+
+}
+
+.bg2 {
+    background-image: url(paragliding-.jpg);
+
+}
+
+.bg3 {
+    background-image: url(surfing.jpg);
+
+}
